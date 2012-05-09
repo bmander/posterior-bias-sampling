@@ -1,0 +1,7 @@
+Demonstration of producing posterior distributions from prior distributions through likelihood-weighted samples.
+
+You have two random variables. A "true value" with some distribution (in this case, an exponential distribution mirrored w/r/t 0) and a "bias" random variable with a uniform distribution over some wide range of values. A third node, the "observed value" is the sum of the two, and has a known value.
+
+Samples of the distribution are produced by sampling either the bias or the true-value nodes uniformly, deducing the other value using the observed value, and likelihood-weighting the combined sample using the prior distributions. The result is a posterior distribution for both the true value and the bias, given the evidence.
+
+If you hit any key at any point, the bias prior will be set to the bias posterior and sampling will re-start. If you hit "o" the observed value will switch from 15 to 0. For fun, iterate through the sampling process several times and then change the observed value. The bias distribution will converge on a narrow distribution, which will produce a tight distribution for any further true-value posterior given evidence.
